@@ -1,0 +1,20 @@
+<section class="card checkin">
+    <form name="myForm" ng-submit="addCheckin()" novalidate>
+        <div class="textintro">
+           <h1>Check In</h1>
+           <p>Fill out this form to check in or go <a ng-href="#/meetings">back to Meetings</a></p>
+           <!--<p class="error formerror" ng-show="message">{{message}}</p>-->
+        </div>
+
+        <fieldset>
+              <input type="text" name="firstname" placeholder="First Name" ng-model="user.firstname" ng-required="true">
+              <p class="error validationerror" ng-show="myForm.fname.$invalid && myForm.firstname.$dirty && myForm.lastname.$pristine">Must be a valid firstname</p>
+              <input type="text" name="lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true">
+              <p class="error validationerror" ng-show="myForm.lastname.$invalid && myForm.lastname.$dirty && myForm.lastname.$pristine">Must be a valid lastname</p>
+              <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+              <p class="error validationerror" ng-show="myForm.email.$invalid && myForm.email.$dirty && myform.lastname.$pristine">Must be a valid email</p>
+        </fieldset>
+
+        <button type="submit" ng-disabled="myform.$invalid" class="btn">Check In</button>
+    </form>
+</section>
